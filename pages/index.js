@@ -37,7 +37,7 @@ export default function Home({products}) {
       </Head>
       <div className="row">
         <div className="col-12">
-          <h1>ِE-commerce</h1>
+          <h1>E-commerce</h1>
           <input className="form-control mb-3" type="text" placeholder="Search for a product" aria-label="Search for a product" value={search} onChange={handleSearch} />
         </div>
 
