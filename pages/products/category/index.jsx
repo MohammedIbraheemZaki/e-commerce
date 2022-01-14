@@ -18,9 +18,11 @@ const Categories = ({categories}) => {
       <div className="row">
         {categories.map((category, index) => (
           <div className="col-12" key={index} >
-            <Link href={'/products/category/'+category} >
-              <a>{category}</a>
-            </Link>
+            <div className="alert alert-info" role="alert">
+              <Link href={'/products/category/'+category} >
+                <a>{category}</a>
+              </Link>
+            </div>
           </div>
         ))}
       </div>

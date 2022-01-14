@@ -16,12 +16,12 @@ const NavBar = () => {
             <Link href="/" >
               <a  className="nav-link active" aria-current="page" >Home</a>
             </Link>
-            <Link href='/about' >
+            {/* <Link href='/about' >
               <a className="nav-link">About</a>
-            </Link>
-            <Link href='/cart' >
+            </Link> */}
+            {/* <Link href='/cart' >
               <a className="nav-link">Cart</a>
-            </Link>
+            </Link> */}
             <Link href='/products/category' >
               <a className="nav-link">Categories</a>
             </Link>
