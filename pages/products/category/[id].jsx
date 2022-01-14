@@ -27,7 +27,7 @@ export const getStaticProps = async (context) => {
 }
 
 const Category = ({products}) => {
-  console.log(products);
+  // console.log(products);
 
   return (
     <div className='container' >
