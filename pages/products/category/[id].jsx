@@ -33,7 +33,7 @@ const Category = ({products}) => {
     <div className='container' >
       <div className="row">
         {products.map((product, index) => (
-          <div className="col-3" key={index} >
+          <div className="col-lg-3 col-md-6 col-sm-12" key={index} >
             <Product product={product} />
           </div>
         ))}
