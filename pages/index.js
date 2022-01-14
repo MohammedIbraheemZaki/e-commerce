@@ -1,3 +1,4 @@
+import {useState, useEffect} from 'react'
 import Head from 'next/head'
 import Product from '../components/Product'
 
@@ -11,7 +12,22 @@ export const getStaticProps = async () => {
 
 
 export default function Home({products}) {
-  // console.log(products);
+
+  const [filter, setFilter] = useState([])
+  const [search, setSearch] = useState('')
+
+  useEffect((e) => {
+    if(search === ''){
+      setFilter(products)
+    } else {
+      setFilter(products.filter((product) => product.title.toLowerCase().includes(search.toLowerCase())))
+    }
+  }, [products, search])
+
+  const handleSearch = (e) => {
+    setSearch(e.target.value)
+  }
+
   return (
     <div className='container'>
       <Head>
@@ -22,9 +38,10 @@ export default function Home({products}) {
       <div className="row">
         <div className="col-12">
           <h1>hello from next</h1>
+          <input className="form-control mb-3" type="text" placeholder="Search for a product" aria-label="Search for a product" value={search} onChange={handleSearch} />
         </div>
 
-      {products.map((product, index) => (
+      {filter.map((product, index) => (
         <div className="col-3" key={index} >
           <Product product={product} />
         </div>
